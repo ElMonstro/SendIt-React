@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Component } from "react";
 import { connect } from "react-redux";
-import uuidv1 from "uuid";
 import { createOrder } from '../actions/index';
 
 function mapDispatchToProps (dispatch) {
@@ -41,6 +40,8 @@ class ConnectedForm extends Component {
     render () {
         const { weight, recepient_name, recepient_no, pickup, dest } = this.state;
         return (
+    <div className="col-md-4 offset-md-1">
+      <h2>Create a new parcel order</h2>
         <form onSubmit={ this.handleSubmit }>
         <div className="form-group">
             <label htmlFor="recepient_name">Receipient Name</label>
@@ -91,6 +92,7 @@ class ConnectedForm extends Component {
           SAVE
         </button>
         </form>
+        </div>
         );
     }
 }

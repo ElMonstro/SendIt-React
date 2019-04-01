@@ -6,6 +6,9 @@ const mapStateToProps = state => {
 };
 
 const ConnectedList = ({ orders }) => (
+    <div className="row mt-5">
+    <div className="col-md-4 offset-md-1">
+      <h2>Parcel orders</h2>
     <ul className="list-group list-group-flush">
         {orders.map(
             el => (
@@ -14,7 +17,9 @@ const ConnectedList = ({ orders }) => (
                 </li>
             )
         )}
-    </ul>
+            </ul>
+        </div>
+        </div>
 );
 
 const List = connect(mapStateToProps)(ConnectedList);

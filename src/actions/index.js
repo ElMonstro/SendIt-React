@@ -1,4 +1,4 @@
-import { UPDATE_ORDERS_STATE, GET_ALL_ORDERS } from '../constants/action-types';
+import { GET_ALL_ORDERS } from '../constants/action-types';
 
 const url = "https://pacific-harbor-80743.herokuapp.com/api/v2/parcels/"
 

@@ -1,18 +1,19 @@
 import React from 'react';
 import List from './List';
 import Form from './Form';
+import Header from './Header';
+import { BrowserRouter as Router, Route,  } from 'react-router-dom'
+import Home from './Home';
 
 const App = () => (
-    <div className="row mt-5">
-    <div className="col-md-4 offset-md-1">
-    <h2>Parcel orders</h2>
-      <List />
-    </div>
-    <div className="col-md-4 offset-md-1">
-      <h2>Create a new parcel order</h2>
-      <Form />
-    </div>
-    </div>
+  <Router>
+    <div>
+    <Header />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/parcels" component={List} />
+    <Route path="/create-parcel" component={Form}/>
+  </div>
+  </Router>
 );
 
 export default App;

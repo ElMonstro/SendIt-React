@@ -4,9 +4,7 @@ import {
 } from '../constants/action-types';
 import store from '../store/index';
 
-export function getAllordersMiddleware({
-    dispatch
-}) {
+export function getAllordersMiddleware({ dispatch}) {
     return function (next) {
         return function (action) {
             if (action.type === GET_ALL_ORDERS) {
@@ -31,7 +29,6 @@ export function getAllOrders() {
                 type: UPDATE_ORDERS_STATE,
                 payload: json
             });
-            console.log(json)
         });
 };
 
@@ -52,6 +49,7 @@ export function logInUser() {
         .then(response => response.json())
         .then(json => {
             localStorage.setItem("token", json.token)
+            console.log(json.message)
             getAllOrders()
         });
 };
