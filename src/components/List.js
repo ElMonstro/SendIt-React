@@ -1,16 +1,16 @@
 import * as React from "react";
-import { connect } from  'react-redux';
+import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
-    return { articles: state.articles };
+    return { orders: state.orders };
 };
 
-const ConnectedList = ({ articles }) => (
+const ConnectedList = ({ orders }) => (
     <ul className="list-group list-group-flush">
-        {articles.map(
+        {orders.map(
             el => (
-                <li className="list-group-item" key={el.id}>
-                    {el.title}
+                <li className="list-group-item" key={el.order_id}>
+                    <span>Sender ID: {el.user_id} | </span><span>Order ID: {el.order_id}</span>
                 </li>
             )
         )}

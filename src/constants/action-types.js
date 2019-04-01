@@ -1,1 +1,4 @@
-export const ADD_ARTICLE = "ADD_ARTICLE"
+export const CREATE_ORDER = "ADD_ARTICLE";
+export const USER_LOGGED_IN = "USER_LOGGED_IN";
+export const UPDATE_ORDERS_STATE = "UPDATE_ORDERS_STATE";
+export const GET_ALL_ORDERS = 'GET_ALL_ORDERS';
