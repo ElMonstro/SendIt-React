@@ -2,36 +2,40 @@
   "name": "test",
   "version": "1.0.0",
   "description": "Boiler for react",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "11.12.0"
+  },
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "module": "webpack --mode production"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --hot --inline",
+    "build": "webpack --config webpack.prod.config.js --mode production",
+    "start": "npm run build && NODE_ENV=production node server.js"
   },
   "author": "Moracha Josh",
   "license": " MIT",
-  "dependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-middleware": "^3.6.1",
-    "webpack-dev-server": "^3.2.1",
-    "webpack-hot-middleware": "^2.24.3"
-  },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
-    "html-webpack-plugin": "^3.2.0",
-    "react-bootstrap": "^1.0.0-beta.6",
+    "react-hot-loader": "^4.8.0",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "babel-polyfill": "^6.26.0",
+    "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.8.5",
+    "react-bootstrap": "^1.0.0-beta.6",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0",
     "redux-thunk": "^2.3.0",
-    "uuid": "^3.3.2"
+    "webpack": "^4.29.6"
   }
 }
